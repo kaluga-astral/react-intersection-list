@@ -23,6 +23,8 @@ class Sentinel extends Component {
             <template style={{ height: 1, minWidth: 1, display: 'block' }} />
         );
 
+        this.observer = React.createRef();
+
         props.setRef(this.setRootElement);
     }
 
