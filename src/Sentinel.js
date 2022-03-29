@@ -52,8 +52,10 @@ class Sentinel extends Component {
             currentRootMargin === rootMargin &&
             currentRootElement === rootElement
         ) {
-            this.observer.externalUnobserve();
-            this.observer.observe();
+            if (this.observer) {
+                this.observer.externalUnobserve();
+                this.observer.observe();
+            }
             return false;
         }
         return true;
